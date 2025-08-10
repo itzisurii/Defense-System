@@ -29,7 +29,7 @@ public class Helicopter extends javax.swing.JFrame implements DefenceObserver{
         jLabel6 = new javax.swing.JLabel();
         jSpinner1 = new javax.swing.JSpinner();
         jSpinner2 = new javax.swing.JSpinner();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        chkPositionHeli = new javax.swing.JCheckBox();
         lblAreaStatus = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -49,11 +49,11 @@ public class Helicopter extends javax.swing.JFrame implements DefenceObserver{
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setText("Ammo");
 
-        jCheckBox1.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        jCheckBox1.setText("Position");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        chkPositionHeli.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        chkPositionHeli.setText("Position");
+        chkPositionHeli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                chkPositionHeliActionPerformed(evt);
             }
         });
 
@@ -155,7 +155,7 @@ public class Helicopter extends javax.swing.JFrame implements DefenceObserver{
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jCheckBox1)))
+                                    .addComponent(chkPositionHeli)))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jTextField1)
@@ -197,7 +197,7 @@ public class Helicopter extends javax.swing.JFrame implements DefenceObserver{
                                     .addComponent(jLabel5)
                                     .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(57, 57, 57)
-                                .addComponent(jCheckBox1)))
+                                .addComponent(chkPositionHeli)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
@@ -224,9 +224,9 @@ public class Helicopter extends javax.swing.JFrame implements DefenceObserver{
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void chkPositionHeliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPositionHeliActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_chkPositionHeliActionPerformed
 
     @Override
     public void updateAreaStatus(boolean isCleared){
@@ -243,12 +243,18 @@ public class Helicopter extends javax.swing.JFrame implements DefenceObserver{
         jLabel2.setEnabled(false);
         jLabel3.setEnabled(false);
         
+        if(!chkPositionHeli.isSelected()){
+            return;
+        }
+        
         if(Level>=20){
             jLabel1.setEnabled(true);
-        }else if(Level>=40){
+        }
+        if(Level>=40){
             jLabel2.setEnabled(true);
             jLabel1.setEnabled(false);
-        }else if(Level>60){
+        }
+        if(Level>60){
             jLabel3.setEnabled(true);
             jLabel1.setEnabled(false);
             jLabel2.setEnabled(false);
@@ -256,8 +262,8 @@ public class Helicopter extends javax.swing.JFrame implements DefenceObserver{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox chkPositionHeli;
     private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

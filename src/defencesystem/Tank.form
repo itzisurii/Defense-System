@@ -54,13 +54,13 @@
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jLabel9" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
-                                          <Component id="jLabel8" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
+                                          <Component id="jLabelTank3" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
+                                          <Component id="jLabelTank1" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel5" min="-2" pref="122" max="-2" attributes="0"/>
-                                          <Component id="jLabel11" min="-2" pref="122" max="-2" attributes="0"/>
+                                          <Component id="jLabelTank2" min="-2" pref="122" max="-2" attributes="0"/>
+                                          <Component id="jLabelTank4" min="-2" pref="122" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Component id="lblAreaStatus" max="32767" attributes="0"/>
@@ -80,7 +80,7 @@
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                                      <Component id="jCheckBox1" max="32767" attributes="0"/>
+                                      <Component id="chkPositionTank" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
@@ -132,20 +132,20 @@
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jCheckBox1" min="-2" pref="37" max="-2" attributes="0"/>
+                              <Component id="chkPositionTank" min="-2" pref="37" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="lblAreaStatus" min="-2" pref="33" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel8" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="jLabelTank1" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="jLabelTank2" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel9" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                  <Component id="jLabel11" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="jLabelTank3" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="jLabelTank4" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           </Group>
@@ -220,7 +220,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+    <Component class="javax.swing.JCheckBox" name="chkPositionTank">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI Black" size="18" style="1"/>
@@ -228,7 +228,7 @@
         <Property name="text" type="java.lang.String" value="Position"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkPositionTankActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblAreaStatus">
@@ -240,7 +240,7 @@
         <Property name="text" type="java.lang.String" value="AREA IS NOT CLEARED "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
+    <Component class="javax.swing.JLabel" name="jLabelTank2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="1"/>
@@ -278,7 +278,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel8">
+    <Component class="javax.swing.JLabel" name="jLabelTank1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="1"/>
@@ -301,7 +301,7 @@
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel9">
+    <Component class="javax.swing.JLabel" name="jLabelTank3">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="1"/>
@@ -337,7 +337,7 @@
         <Property name="text" type="java.lang.String" value="Soldiers"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel11">
+    <Component class="javax.swing.JLabel" name="jLabelTank4">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="1"/>

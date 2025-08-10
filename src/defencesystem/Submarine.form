@@ -44,13 +44,13 @@
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jLabel9" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
-                                          <Component id="jLabel8" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
+                                          <Component id="jLabelSub3" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
+                                          <Component id="jLabelSub1" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel5" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
-                                          <Component id="jLabel11" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
+                                          <Component id="jLabelSub2" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
+                                          <Component id="jLabelSub4" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Component id="lblAreaStatus" max="32767" attributes="0"/>
@@ -68,7 +68,7 @@
                                           <Component id="jSpinner2" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="jCheckBox1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkPositionSub" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                           </Group>
@@ -134,20 +134,20 @@
                                           </Group>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jCheckBox1" min="-2" pref="37" max="-2" attributes="0"/>
+                                      <Component id="chkPositionSub" min="-2" pref="37" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="lblAreaStatus" min="-2" pref="33" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel8" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                          <Component id="jLabel5" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                          <Component id="jLabelSub1" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                          <Component id="jLabelSub2" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel9" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                          <Component id="jLabel11" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                          <Component id="jLabelSub3" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                          <Component id="jLabelSub4" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                   </Group>
@@ -176,7 +176,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel5">
+    <Component class="javax.swing.JLabel" name="jLabelSub2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="1"/>
@@ -251,7 +251,7 @@
         <Property name="text" type="java.lang.String" value="Ammo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel8">
+    <Component class="javax.swing.JLabel" name="jLabelSub1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="1"/>
@@ -276,7 +276,7 @@
     </Component>
     <Component class="javax.swing.JSpinner" name="jSpinner1">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel9">
+    <Component class="javax.swing.JLabel" name="jLabelSub3">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="1"/>
@@ -329,7 +329,7 @@
         <Property name="text" type="java.lang.String" value="Soldiers"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+    <Component class="javax.swing.JCheckBox" name="chkPositionSub">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI Black" size="18" style="1"/>
@@ -337,7 +337,7 @@
         <Property name="text" type="java.lang.String" value="Position"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkPositionSubActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblAreaStatus">
@@ -359,7 +359,7 @@
         <Property name="value" type="int" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel11">
+    <Component class="javax.swing.JLabel" name="jLabelSub4">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="1"/>

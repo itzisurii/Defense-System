@@ -25,6 +25,11 @@ public class MainController extends javax.swing.JFrame {
             o.updateAreaStatus(isCleared);
         }
     }
+    private void notifyButtonLevels(int Level){
+        for(DefenceObserver o : observers){
+            o.enableButtonsForLevel(Level);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -54,7 +59,7 @@ public class MainController extends javax.swing.JFrame {
         jTextArea3 = new javax.swing.JTextArea();
         jCheckBox2 = new javax.swing.JCheckBox();
         jButton4 = new javax.swing.JButton();
-        jSlider2 = new javax.swing.JSlider();
+        mainConSlider = new javax.swing.JSlider();
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -145,11 +150,25 @@ public class MainController extends javax.swing.JFrame {
             }
         });
 
-        jSlider2.setMajorTickSpacing(20);
-        jSlider2.setMinorTickSpacing(5);
-        jSlider2.setPaintLabels(true);
-        jSlider2.setPaintTicks(true);
-        jSlider2.setValue(0);
+        mainConSlider.setMajorTickSpacing(20);
+        mainConSlider.setMinorTickSpacing(5);
+        mainConSlider.setPaintLabels(true);
+        mainConSlider.setPaintTicks(true);
+        mainConSlider.setValue(0);
+        mainConSlider.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                mainConSliderAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        mainConSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                mainConSliderStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -177,7 +196,7 @@ public class MainController extends javax.swing.JFrame {
                         .addComponent(jScrollPane1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(jSlider2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(mainConSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -223,7 +242,7 @@ public class MainController extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                        .addComponent(jSlider2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(mainConSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -249,6 +268,15 @@ public class MainController extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void mainConSliderAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_mainConSliderAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mainConSliderAncestorAdded
+
+    private void mainConSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_mainConSliderStateChanged
+        int value = mainConSlider.getValue();
+        notifyButtonLevels(value);
+    }//GEN-LAST:event_mainConSliderStateChanged
 
     /**
      * @param args the command line arguments
@@ -287,9 +315,9 @@ public class MainController extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JSlider jSlider2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JSlider mainConSlider;
     // End of variables declaration//GEN-END:variables
 }

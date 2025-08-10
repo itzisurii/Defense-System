@@ -113,7 +113,7 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="jSlider2" min="-2" pref="283" max="-2" attributes="0"/>
+                      <Component id="mainConSlider" min="-2" pref="283" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="11" max="32767" attributes="0"/>
@@ -173,7 +173,7 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="22" max="32767" attributes="0"/>
-                      <Component id="jSlider2" min="-2" max="-2" attributes="0"/>
+                      <Component id="mainConSlider" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -338,7 +338,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JSlider" name="jSlider2">
+    <Component class="javax.swing.JSlider" name="mainConSlider">
       <Properties>
         <Property name="majorTickSpacing" type="int" value="20"/>
         <Property name="minorTickSpacing" type="int" value="5"/>
@@ -346,6 +346,10 @@
         <Property name="paintTicks" type="boolean" value="true"/>
         <Property name="value" type="int" value="0"/>
       </Properties>
+      <Events>
+        <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="mainConSliderAncestorAdded"/>
+        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="mainConSliderStateChanged"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
