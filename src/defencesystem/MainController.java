@@ -30,6 +30,11 @@ public class MainController extends javax.swing.JFrame {
             o.enableButtonsForLevel(Level);
         }
     }
+    public void broadcastMessage(String message){
+        for(DefenceObserver o : observers){
+            o.updateMessage("Main Controller : ",message);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -56,9 +61,9 @@ public class MainController extends javax.swing.JFrame {
         jTextArea2 = new javax.swing.JTextArea();
         checkAreaClear = new javax.swing.JCheckBox();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        txtMessageMain = new javax.swing.JTextArea();
         jCheckBox2 = new javax.swing.JCheckBox();
-        jButton4 = new javax.swing.JButton();
+        btnSendMain = new javax.swing.JButton();
         mainConSlider = new javax.swing.JSlider();
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -133,20 +138,21 @@ public class MainController extends javax.swing.JFrame {
             }
         });
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane3.setViewportView(jTextArea3);
+        txtMessageMain.setColumns(20);
+        txtMessageMain.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtMessageMain.setRows(5);
+        jScrollPane3.setViewportView(txtMessageMain);
 
         jCheckBox2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jCheckBox2.setText("SEND PRIVATE");
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 0));
-        jButton4.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("SEND");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnSendMain.setBackground(new java.awt.Color(0, 0, 0));
+        btnSendMain.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
+        btnSendMain.setForeground(new java.awt.Color(255, 255, 255));
+        btnSendMain.setText("SEND");
+        btnSendMain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnSendMainActionPerformed(evt);
             }
         });
 
@@ -208,7 +214,7 @@ public class MainController extends javax.swing.JFrame {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
                             .addComponent(jScrollPane3)
                             .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnSendMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(15, 15, 15))))
         );
         layout.setVerticalGroup(
@@ -238,7 +244,7 @@ public class MainController extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSendMain, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
@@ -265,9 +271,13 @@ public class MainController extends javax.swing.JFrame {
        notifyObservers(checkAreaClear.isSelected());
     }//GEN-LAST:event_checkAreaClearActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void btnSendMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendMainActionPerformed
+        String message = txtMessageMain.getText().trim();
+        if(!message.isEmpty()){
+            broadcastMessage(message);
+            txtMessageMain.setText("");
+        }
+    }//GEN-LAST:event_btnSendMainActionPerformed
 
     private void mainConSliderAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_mainConSliderAncestorAdded
         // TODO add your handling code here:
@@ -298,10 +308,10 @@ public class MainController extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSendMain;
     private javax.swing.JCheckBox checkAreaClear;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
@@ -317,7 +327,7 @@ public class MainController extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JSlider mainConSlider;
+    private javax.swing.JTextArea txtMessageMain;
     // End of variables declaration//GEN-END:variables
 }

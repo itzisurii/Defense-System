@@ -34,17 +34,17 @@ public class Tank extends javax.swing.JFrame implements DefenceObserver{
         jSpinner2 = new javax.swing.JSpinner();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        chkPositionTank = new javax.swing.JCheckBox();
+        jCheckBox1 = new javax.swing.JCheckBox();
         lblAreaStatus = new javax.swing.JLabel();
-        jLabelTank2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jLabelTank1 = new javax.swing.JLabel();
-        jLabelTank3 = new javax.swing.JLabel();
+        txtAreaTank = new javax.swing.JTextArea();
         jTextField1 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jLabelTank4 = new javax.swing.JLabel();
         jSlider1 = new javax.swing.JSlider();
+        btntank3 = new javax.swing.JButton();
+        btntank2 = new javax.swing.JButton();
+        btntank4 = new javax.swing.JButton();
+        btntank1 = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -72,11 +72,11 @@ public class Tank extends javax.swing.JFrame implements DefenceObserver{
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        chkPositionTank.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        chkPositionTank.setText("Position");
-        chkPositionTank.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox1.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jCheckBox1.setText("Position");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkPositionTankActionPerformed(evt);
+                jCheckBox1ActionPerformed(evt);
             }
         });
 
@@ -84,33 +84,10 @@ public class Tank extends javax.swing.JFrame implements DefenceObserver{
         lblAreaStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAreaStatus.setText("AREA IS NOT CLEARED ");
 
-        jLabelTank2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jLabelTank2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTank2.setText("Missile Operation");
-        jLabelTank2.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, new javax.swing.border.MatteBorder(null)));
-        jLabelTank2.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
-        jLabelTank2.setInheritsPopupMenu(false);
-        jLabelTank2.setOpaque(true);
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
-
-        jLabelTank1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jLabelTank1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTank1.setText("Shoot");
-        jLabelTank1.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, new javax.swing.border.MatteBorder(null)));
-        jLabelTank1.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
-        jLabelTank1.setInheritsPopupMenu(false);
-        jLabelTank1.setOpaque(true);
-
-        jLabelTank3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jLabelTank3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTank3.setText("Radar Operation");
-        jLabelTank3.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, new javax.swing.border.MatteBorder(null)));
-        jLabelTank3.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
-        jLabelTank3.setInheritsPopupMenu(false);
-        jLabelTank3.setOpaque(true);
+        txtAreaTank.setColumns(20);
+        txtAreaTank.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtAreaTank.setRows(5);
+        jScrollPane2.setViewportView(txtAreaTank);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,20 +98,28 @@ public class Tank extends javax.swing.JFrame implements DefenceObserver{
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel10.setText("Soldiers");
 
-        jLabelTank4.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jLabelTank4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTank4.setText("Rotate Shooting");
-        jLabelTank4.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, new javax.swing.border.MatteBorder(null)));
-        jLabelTank4.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
-        jLabelTank4.setInheritsPopupMenu(false);
-        jLabelTank4.setOpaque(true);
-
         jSlider1.setMajorTickSpacing(20);
         jSlider1.setMinorTickSpacing(5);
         jSlider1.setOrientation(javax.swing.JSlider.VERTICAL);
         jSlider1.setPaintLabels(true);
         jSlider1.setPaintTicks(true);
         jSlider1.setValue(0);
+
+        btntank3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        btntank3.setText("Radar Operation");
+        btntank3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        btntank2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        btntank2.setText("Missile Operation");
+        btntank2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        btntank4.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        btntank4.setText("Rotate Shooting");
+        btntank4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        btntank1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        btntank1.setText("Shoot");
+        btntank1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,30 +128,27 @@ public class Tank extends javax.swing.JFrame implements DefenceObserver{
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jTextField1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jTextField1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblAreaStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jLabelTank3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabelTank1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabelTank2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabelTank4, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(lblAreaStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(btntank1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btntank2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btntank3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btntank4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(6, 6, 6)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -178,8 +160,8 @@ public class Tank extends javax.swing.JFrame implements DefenceObserver{
                                             .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(59, 59, 59)
-                                        .addComponent(chkPositionTank, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addGap(44, 44, 44)
+                                        .addComponent(jCheckBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGap(58, 58, 58)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -215,19 +197,19 @@ public class Tank extends javax.swing.JFrame implements DefenceObserver{
                                         .addComponent(jLabel10)
                                         .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18)
-                                .addComponent(chkPositionTank, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(34, 34, 34))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblAreaStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(24, 24, 24)
+                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabelTank1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelTank2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(9, 9, 9)
+                                    .addComponent(btntank1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btntank2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabelTank3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelTank4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(22, 22, 22)))
+                                    .addComponent(btntank3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btntank4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -243,9 +225,9 @@ public class Tank extends javax.swing.JFrame implements DefenceObserver{
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void chkPositionTankActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPositionTankActionPerformed
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkPositionTankActionPerformed
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
@@ -261,54 +243,53 @@ public class Tank extends javax.swing.JFrame implements DefenceObserver{
     }
     @Override
     public void enableButtonsForLevel(int Level){
-        jLabelTank1.setEnabled(false);
-        jLabelTank2.setEnabled(false);
-        jLabelTank3.setEnabled(false);
-        jLabelTank4.setEnabled(false);
+        btntank1.setEnabled(false);
+        btntank2.setEnabled(false);
+        btntank3.setEnabled(false);
+        btntank4.setEnabled(false);
         
-        if(!chkPositionTank.isSelected()){
+        if(!jCheckBox1.isSelected()){
             return;
         }
         
         if(Level>=20){
-            jLabelTank1.setEnabled(true);
+            btntank1.setEnabled(true);
         }
         if(Level>=40){
-            jLabelTank2.setEnabled(true);
-            jLabelTank1.setEnabled(false);
+            btntank2.setEnabled(true);
         } 
         if(Level>=60){
-            jLabelTank3.setEnabled(true);
-            jLabelTank1.setEnabled(false);
-            jLabelTank2.setEnabled(false);
+            btntank3.setEnabled(true);
         } 
         if(Level>80){
-            jLabelTank4.setEnabled(true);
-            jLabelTank1.setEnabled(false);
-            jLabelTank2.setEnabled(false);
-            jLabelTank3.setEnabled(false);
+            btntank4.setEnabled(true);
         }
+    }
+    
+    @Override
+    public void updateMessage(String sender, String message){
+        txtAreaTank.append(sender+" : "+message+"\n");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox chkPositionTank;
+    private javax.swing.JButton btntank1;
+    private javax.swing.JButton btntank2;
+    private javax.swing.JButton btntank3;
+    private javax.swing.JButton btntank4;
     private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabelTank1;
-    private javax.swing.JLabel jLabelTank2;
-    private javax.swing.JLabel jLabelTank3;
-    private javax.swing.JLabel jLabelTank4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSlider jSlider1;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblAreaStatus;
+    private javax.swing.JTextArea txtAreaTank;
     // End of variables declaration//GEN-END:variables
 }

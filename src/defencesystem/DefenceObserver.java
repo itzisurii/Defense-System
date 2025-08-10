@@ -11,4 +11,5 @@ package defencesystem;
 public interface DefenceObserver {
     void updateAreaStatus(boolean isCleared);
     void enableButtonsForLevel(int Level);
+    void updateMessage(String sender, String message);
 }
